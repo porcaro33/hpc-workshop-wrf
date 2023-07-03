@@ -14,14 +14,14 @@ echo "SHARED FOLDER: ${shared_folder}"
 dir_name=$(basename -s .git ${github_repo})
 
 case ${cfn_node_type} in
-        HeadNode)
+        "HeadNode")
                 echo "I am the HeadNode node"
                 cd ${shared_folder}
                 git clone ${github_repo}
                 REPO_FOLDER=$(basename ${github_repo} | cut -f 1 -d '.')
 
         ;;
-        ComputeFleet)
+        "ComputeFleet")
                 echo "I am a Compute node"
         ;;
         esac
